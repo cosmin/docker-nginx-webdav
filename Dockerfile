@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 
-RUN apt-get update && apt-get install -yq --no-install-recommends nginx nginx-extras gosu apache2-utils && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get upgrade -y && apt-get install -yq --no-install-recommends nginx nginx-extras gosu apache2-utils && rm -rf /var/lib/apt/lists/*
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN rm /etc/nginx/sites-enabled/*
 RUN rm /etc/nginx/sites-available/*
